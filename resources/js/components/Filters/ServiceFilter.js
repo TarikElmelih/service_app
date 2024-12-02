@@ -126,14 +126,24 @@ class ServiceFilter {
 
     updateFilters() {
         const typeCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-        const areaSelect = document.querySelector('select:nth-of-type(1)');
-        const statusSelect = document.querySelector('select:nth-of-type(2)');
+        const areaSelect = document.querySelector('select[name="area"]');
+        const statusSelect = document.querySelector('select[name="status"]');
 
-        this.filters.type = Array.from(typeCheckboxes).map(cb => cb.value);
-        this.filters.area = areaSelect.value;
-        this.filters.status = statusSelect.value;
+        // تحديث الفلاتر
+        const checkedTypes = Array.from(typeCheckboxes).map(cb => cb.value);
+        this.filters.type = checkedTypes;
+        this.filters.area = areaSelect ? areaSelect.value : '';
+        this.filters.status = statusSelect ? statusSelect.value : 'all';
 
-        this.onFilterChange(this.filters);
+        // إذا لم يتم تحديد أي تصنيف، نجعل المصفوفة فارغة لعرض كل النقاط
+        if (checkedTypes.length === 0) {
+            this.filters.type = [];
+        }
+
+        // تحديث النقاط على الخريطة
+        if (this.map) {
+            this.map.updateMarkers(this.filters);
+        }
     }
 }
 

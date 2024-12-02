@@ -52,12 +52,12 @@
                         
                         <div class="h-6 w-px bg-white/20 mx-2"></div>
                         
-                        <a href="#" class="px-4 py-2 rounded-md text-sm font-medium hover:bg-white/10 transition-colors">
+                        {{-- <a href="#" class="px-4 py-2 rounded-md text-sm font-medium hover:bg-white/10 transition-colors">
                             تسجيل الدخول
                         </a>
                         <a href="#" class="px-4 py-2 rounded-md text-sm font-medium bg-white text-[#1b7f64] hover:bg-white/90 transition-colors">
                             إنشاء حساب
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>

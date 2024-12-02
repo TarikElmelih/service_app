@@ -98,3 +98,24 @@ select {
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
 }
+
+/* Marker Styles */
+.marker-medical {
+    filter: hue-rotate(0deg);
+}
+
+.marker-education {
+    filter: hue-rotate(120deg);
+}
+
+.marker-government {
+    filter: hue-rotate(240deg);
+}
+
+.leaflet-marker-icon {
+    transition: all 0.3s ease;
+}
+
+.leaflet-marker-icon:hover {
+    transform: scale(1.2);
+}
