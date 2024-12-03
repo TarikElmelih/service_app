@@ -1,4 +1,7 @@
 import './bootstrap';
+
+import Alpine from 'alpinejs';
+
 import ServiceMap from './components/Map/ServiceMap';
 import ServiceFilter from './components/Filters/ServiceFilter';
 
@@ -12,3 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         filter.map = map;
     }
 });
+
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
