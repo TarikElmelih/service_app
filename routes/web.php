@@ -8,11 +8,14 @@ use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
-
+use App\Models\Category;
+use App\Models\Service;
 
 // Home route
 Route::get('/', function () {
-    return view('home');
+    $categories = Category::all();  
+    $services = Service::all();
+    return view('home', compact('categories', 'services'));
 })->name('home');
 
 // Admin routes

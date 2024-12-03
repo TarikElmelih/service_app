@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('front_layouts.app')
 
 @section('content')
 <div class="flex flex-col h-screen">
