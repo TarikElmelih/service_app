@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            if (!Schema::hasColumn('services', 'category_id')) {
-                $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
-            }
+            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->text('details')->nullable();
             $table->timestamps();
         });

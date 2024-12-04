@@ -14,7 +14,7 @@ use App\Models\Service;
 // Home route
 Route::get('/', function () {
     $categories = Category::all();  
-    $services = Service::all();
+    $services = Service::with('category')->get();
     return view('home', compact('categories', 'services'));
 })->name('home');
 
@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('services', ServiceController::class);
 Route::resource('categories', CategoryController::class);
+Route::resource('contacts', ContactController::class);
 
 require __DIR__.'/auth.php';
 
